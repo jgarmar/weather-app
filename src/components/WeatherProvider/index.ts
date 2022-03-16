@@ -1,1 +1,1 @@
-export default WeatherProvider from './WeatherProvider';
+export { default } from "./WeatherProvider";

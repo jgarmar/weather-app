@@ -10,18 +10,20 @@ export type WeatherLocation = {
   sun_rise: string;
   sun_set: string;
   timezone_name: string;
-  parent: {
-    title: string;
-    location_type: string;
-    woeid: number;
-    latt_long: string;
-  };
+  parent: Location;
   sources: Sources[];
   title: string;
   location_type: string;
   woeid: number;
   latt_long: string;
   timezone: string;
+};
+
+export type Location = {
+  title: string;
+  location_type: string;
+  woeid: number;
+  latt_long: string;
 };
 
 export type ConsolidatedWeather = {
