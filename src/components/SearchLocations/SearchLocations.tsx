@@ -15,6 +15,7 @@ import {
   LocationListProps,
   LocationItemProps,
 } from './SearchLocations.types';
+import { Location } from '../WeatherProvider/WeatherProvider.types';
 
 const SearchLocations = (props: SearchLocationsProps) => {
   const { locations } = useWeather();
@@ -32,7 +33,7 @@ export const SearchBox = () => {
   const [query, setQuery] = useState('');
 
   const handleSearchSubmit = () => {
-    searchLocation('a');
+    searchLocation(query);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -66,9 +67,16 @@ export const LocationList = ({ locations }: LocationListProps) => {
 };
 
 export const LocationItem = ({ location }: LocationItemProps) => {
+  const { setCurrentLocation } = useWeather();
+
+  const handleClick = (location: Location) => {
+    console.log(location);
+    setCurrentLocation(location);
+  };
+
   return (
-    <Styles.LocationItem>
-      <Text color="#E7E7EB">{location.title}</Text>
+    <Styles.LocationItem onClick={e => handleClick(location)}>
+      <Text color="ATHENS_GRAY">{location.title}</Text>
     </Styles.LocationItem>
   );
 };
