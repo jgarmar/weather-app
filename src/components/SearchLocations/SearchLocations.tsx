@@ -7,6 +7,8 @@ import React, {
 } from 'react';
 import { useWeather } from '../../hooks/useWeather';
 import Text from '../ui-components/Text';
+import { MdSearch } from 'react-icons/md';
+
 import * as Styles from './SearchLocations.styles';
 import {
   SearchLocationsProps,
@@ -15,7 +17,18 @@ import {
 } from './SearchLocations.types';
 
 const SearchLocations = (props: SearchLocationsProps) => {
-  const { searchLocation, locations } = useWeather();
+  const { locations } = useWeather();
+
+  return (
+    <Styles.Container>
+      <SearchBox />
+      <LocationList locations={locations} />
+    </Styles.Container>
+  );
+};
+
+export const SearchBox = () => {
+  const { searchLocation } = useWeather();
   const [query, setQuery] = useState('');
 
   const handleSearchSubmit = () => {
@@ -25,15 +38,20 @@ const SearchLocations = (props: SearchLocationsProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
-
   return (
-    <Styles.Container>
-      <Styles.Input value={query} onChange={handleChange} />
+    <Styles.SearchInputContainer>
+      <Styles.SearchInput>
+        <MdSearch />
+        <Styles.Input
+          placeholder="search location"
+          value={query}
+          onChange={handleChange}
+        />
+      </Styles.SearchInput>
       <Styles.SearchButton onClick={handleSearchSubmit}>
         <Text>Search</Text>
       </Styles.SearchButton>
-      <LocationList locations={locations} />
-    </Styles.Container>
+    </Styles.SearchInputContainer>
   );
 };
 
