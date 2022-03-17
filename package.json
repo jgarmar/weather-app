@@ -14,14 +14,20 @@
     "@types/react-dom": "^17.0.13",
     "axios": "^0.26.1",
     "axios-case-converter": "^0.9.0",
+    "logrocket": "^2.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
+    "react-use": "^17.3.2",
     "typescript": "^4.6.2",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@cypress/react": "^5.12.4",
+    "@cypress/webpack-dev-server": "^1.8.3",
+    "@emotion/babel-plugin": "^11.7.2",
+    "cypress": "^9.5.2",
     "plop": "^3.0.5"
   },
   "scripts": {

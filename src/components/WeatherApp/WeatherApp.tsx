@@ -1,10 +1,12 @@
-import { css, Global } from '@emotion/react';
-import React, { ReactElement, HTMLProps } from 'react';
-import SearchLocations from '../SearchLocations';
-import SideBar from '../SideBar';
-import WeatherProvider from '../WeatherProvider';
 import * as Styles from './WeatherApp.styles';
+
+import { Global, css } from '@emotion/react';
+
+import SearchLocationScreen from '../SearchLocationScreen';
+import SideBar from '../SideBar';
 import { WeatherAppProps } from './WeatherApp.types';
+import WeatherPanel from '../WeatherPanel';
+import WeatherProvider from '../WeatherProvider';
 
 const WeatherApp = (props: WeatherAppProps) => {
   return (
@@ -13,11 +15,18 @@ const WeatherApp = (props: WeatherAppProps) => {
         styles={css`
           html {
             font-size: 10px;
+            height: 100%;
+          }
+          body,
+          #root {
+            height: 100%;
           }
         `}
       />
       <Styles.Container>
+        <SearchLocationScreen />
         <SideBar />
+        <WeatherPanel />
       </Styles.Container>
     </WeatherProvider>
   );

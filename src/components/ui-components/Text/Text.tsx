@@ -1,9 +1,12 @@
-import React, { ReactElement, HTMLProps } from 'react';
 import * as Styles from './Text.styles';
 import { TextProps } from './Text.types';
 
-const Text = ({ children, color }: TextProps) => {
-  return <Styles.Text color={color}>{children}</Styles.Text>;
+const Text = ({ children, color, ...rest }: TextProps) => {
+  return (
+    <Styles.Text color={color} {...rest}>
+      {children}
+    </Styles.Text>
+  );
 };
 
 export default Text;

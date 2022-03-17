@@ -1,20 +1,22 @@
-import React, {
-  ReactElement,
-  HTMLProps,
-  useState,
-  ChangeEvent,
-  useContext,
-} from 'react';
-import { useWeather } from '../../hooks/useWeather';
-import Text from '../ui-components/Text';
-import { MdSearch } from 'react-icons/md';
-
 import * as Styles from './SearchLocations.styles';
+
 import {
-  SearchLocationsProps,
-  LocationListProps,
   LocationItemProps,
+  LocationListProps,
+  SearchLocationsProps,
 } from './SearchLocations.types';
+import { MdChevronRight, MdSearch } from 'react-icons/md';
+import React, {
+  ChangeEvent,
+  HTMLProps,
+  ReactElement,
+  useContext,
+  useState,
+} from 'react';
+
+import { Location } from '../WeatherProvider/WeatherProvider.types';
+import Text from '../ui-components/Text';
+import { useWeather } from '../../hooks/useWeather';
 
 const SearchLocations = (props: SearchLocationsProps) => {
   const { locations } = useWeather();
@@ -32,12 +34,13 @@ export const SearchBox = () => {
   const [query, setQuery] = useState('');
 
   const handleSearchSubmit = () => {
-    searchLocation('a');
+    searchLocation(query);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
+
   return (
     <Styles.SearchInputContainer>
       <Styles.SearchInput>
@@ -49,7 +52,7 @@ export const SearchBox = () => {
         />
       </Styles.SearchInput>
       <Styles.SearchButton onClick={handleSearchSubmit}>
-        <Text>Search</Text>
+        <Text color="ATHENS_GRAY">Search</Text>
       </Styles.SearchButton>
     </Styles.SearchInputContainer>
   );
@@ -66,9 +69,16 @@ export const LocationList = ({ locations }: LocationListProps) => {
 };
 
 export const LocationItem = ({ location }: LocationItemProps) => {
+  const { setCurrentLocation } = useWeather();
+
+  const handleClick = (location: Location) => {
+    setCurrentLocation(location);
+  };
+
   return (
-    <Styles.LocationItem>
-      <Text color="#E7E7EB">{location.title}</Text>
+    <Styles.LocationItem onClick={e => handleClick(location)}>
+      <Text color="ATHENS_GRAY">{location.title}</Text>
+      <MdChevronRight />
     </Styles.LocationItem>
   );
 };
