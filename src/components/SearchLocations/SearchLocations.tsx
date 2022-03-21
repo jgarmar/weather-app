@@ -70,7 +70,6 @@ export const LocationItem = ({ location }: LocationItemProps) => {
   const { setCurrentLocation } = useWeather();
 
   const handleClick = (location: Location) => {
-    console.log(location);
     setCurrentLocation(location);
   };
 

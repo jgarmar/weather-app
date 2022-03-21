@@ -1,14 +1,28 @@
 import styled from '@emotion/styled';
+import { COLORS } from '../../utils/colors';
 import mq from '../../utils/mediaQuery';
 import { Text } from '../ui-components/Text/Text.styles';
 
 export const Container = styled.div`
-  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex: 1;
   text-align: center;
+
+  img {
+    max-width: 15rem;
+    width: 100%;
+    align-self: center;
+    margin-bottom: 4rem;
+    margin-top: 7.6rem;
+
+    ${mq['md']} {
+      //margin-top: 19.1rem;
+      width: 20.2rem;
+    }
+  }
 `;
 
 export const Background = styled.div`
@@ -20,27 +34,35 @@ export const Background = styled.div`
   background-repeat: repeat-x;
   position: absolute;
   z-index: 0;
-  margin-top: 10.3rem;
-`;
-
-export const WeatherImage = styled.img`
-  width: 15rem;
-  align-self: center;
-
-  ${mq['md']} {
-    margin-top: 19.1rem;
-    width: 20.2rem;
-  }
+  //margin-top: 10.3rem;
 `;
 
 export const Temperature = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  margin-bottom: 2.3rem;
+
+  + p {
+    margin-bottom: 4.8rem;
+  }
 `;
 
 export const TemperatureNumber = styled(Text)``;
 
 export const TemperatureUnit = styled(Text)`
   font-weight: 100;
+`;
+
+export const LocationTag = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 3.3rem;
+
+  > svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: ${COLORS['MANATEE']};
+    margin-right: 0.4rem;
+  }
 `;

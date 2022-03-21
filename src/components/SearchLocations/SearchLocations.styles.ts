@@ -26,6 +26,8 @@ export const SearchButton = styled.button`
 export const List = styled.div`
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
 `;
 
 export const LocationItem = styled.button`
@@ -44,6 +46,7 @@ export const LocationItem = styled.button`
 export const SearchInputContainer = styled.div`
   display: flex;
   align-content: center;
+  justify-content: center;
 `;
 
 export const SearchInput = styled.div`

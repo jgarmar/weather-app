@@ -11,6 +11,8 @@ export const Container = styled.div`
   flex-direction: column;
   padding-bottom: 10.5rem;
   box-sizing: border-box;
+  position: fixed;
+  z-index: 1;
 
   ${mq['md']} {
     max-width: 45.9rem;

@@ -29,7 +29,7 @@ export type Location = {
 export type ConsolidatedWeather = {
   id: number;
   weatherStateName: string;
-  weatherStateAbbr: string;
+  weatherStateAbbr: WeatherStateAbbr;
   windDirectionCompass: string;
   created: string;
   applicableDate: string;
@@ -58,6 +58,10 @@ export type WeatherContextProps = {
   locations: Location[];
   weatherInfo: WeatherInfo | null;
   weatherStateImage: any;
+  currentWeather?: ConsolidatedWeather;
+  forecastWeather?: ConsolidatedWeather[];
+  showLocationSearch: boolean;
+  setShowLocationSearch: (show: boolean) => void;
 };
 
 export const weatherStateImage = {
@@ -73,15 +77,4 @@ export const weatherStateImage = {
   c: "/assets/svg/c.svg",
 };
 
-enum WeatherStateAbbr {
-  "sn",
-  "sl",
-  "h",
-  "t",
-  "hr",
-  "lr",
-  "s",
-  "hc",
-  "lc",
-  "c",
-}
+export type WeatherStateAbbr = keyof typeof weatherStateImage;

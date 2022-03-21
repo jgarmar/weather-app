@@ -2,6 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jgarmar.github.io/weather-app",
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
@@ -23,7 +24,10 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@cypress/react": "^5.12.4",
+    "@cypress/webpack-dev-server": "^1.8.3",
     "@emotion/babel-plugin": "^11.7.2",
+    "cypress": "^9.5.2",
     "plop": "^3.0.5"
   },
   "scripts": {

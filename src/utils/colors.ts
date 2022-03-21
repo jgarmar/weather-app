@@ -4,6 +4,7 @@ export const COLOR_PALLETE = {
   MANATEE: '#88869D',
   SHUTTLE_GRAY: '#616475',
   STORM_GRAY: '#6E707A',
+  MIRAGE: '#1E213A',
 };
 
 export type Colors = keyof typeof COLOR_PALLETE;
