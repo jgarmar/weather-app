@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import { Button } from '../ui-components/Button/Button.styles';
 import { COLORS } from '../../utils/colors';
 import mq from '../../utils/mediaQuery';
-import { Button } from '../ui-components/Button/Button.styles';
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   background-color: #1e213a;
@@ -16,22 +16,6 @@ export const Container = styled.div`
 
   ${mq['md']} {
     max-width: 45.9rem;
-  }
-`;
-
-export const CircularButton = styled(Button)`
-  border: none;
-  border-radius: 100%;
-  width: 4rem;
-  height: 4rem;
-  padding: 0.8rem;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  > svg {
-    width: 2.4rem;
-    height: 2.4rem;
-    color: ${COLORS['ATHENS_GRAY']};
   }
 `;
 
@@ -52,7 +36,6 @@ export const ButtonsContainer = styled.div`
 
   ${mq['md']} {
     padding-top: 4.2rem;
-
     padding: 0 4.6rem;
   }
 `;

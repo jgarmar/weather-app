@@ -5,6 +5,7 @@ export const COLOR_PALLETE = {
   SHUTTLE_GRAY: '#616475',
   STORM_GRAY: '#6E707A',
   MIRAGE: '#1E213A',
+  PARIS_DAISY: '#FFEC65',
 };
 
 export type Colors = keyof typeof COLOR_PALLETE;

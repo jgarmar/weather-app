@@ -14,6 +14,7 @@ export const Text = styled.p<{
   xxl?: boolean;
   xxxl?: boolean;
   thin?: boolean;
+  underline?: boolean;
   normal?: boolean;
   bold?: boolean;
 }>`
@@ -32,6 +33,7 @@ ${props => props.xxl && xxlStyles}
 ${props => props.xxxl && xxxlStyles}
 ${props => props.thin && thinStyles}
 ${props => props.bold && boldStyles}
+${props => props.underline && underlineStyles}
 ${props => !props.bold && !props.thin && normalStyles}
 `;
 
@@ -90,4 +92,8 @@ const normalStyles = css`
 
 const boldStyles = css`
   font-weight: 700;
+`;
+
+const underlineStyles = css`
+  text-decoration: underline;
 `;

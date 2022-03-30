@@ -10,6 +10,7 @@ export const Container = styled.div`
   justify-content: space-between;
   flex: 1;
   text-align: center;
+  padding-bottom: 10.5rem;
 
   img {
     max-width: 15rem;
@@ -41,7 +42,7 @@ export const Temperature = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 2.3rem;
+  margin-bottom: 2.4rem;
 
   + p {
     margin-bottom: 4.8rem;
@@ -57,12 +58,25 @@ export const TemperatureUnit = styled(Text)`
 export const LocationTag = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 3.3rem;
+  margin-top: 3.2rem;
 
   > svg {
     width: 2.4rem;
     height: 2.4rem;
     color: ${COLORS['MANATEE']};
     margin-right: 0.4rem;
+  }
+`;
+
+export const Date = styled.div`
+  display: flex;
+  justify-content: center;
+
+  > p {
+    display: block;
+
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
   }
 `;

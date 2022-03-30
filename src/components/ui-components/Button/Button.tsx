@@ -1,4 +1,3 @@
-import React, { ReactElement, HTMLProps } from 'react';
 import * as Styles from './Button.styles';
 import { ButtonProps } from './Button.types';
 

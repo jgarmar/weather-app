@@ -62,6 +62,10 @@ export type WeatherContextProps = {
   forecastWeather?: ConsolidatedWeather[];
   showLocationSearch: boolean;
   setShowLocationSearch: (show: boolean) => void;
+  setTempUnit: (unit: TempUnits) => void;
+  setCurrentDefaultLocation: () => void;
+  tempUnit: TempUnits;
+  parseTemp: (temp?: number) => string | null;
 };
 
 export const weatherStateImage = {
@@ -77,4 +81,18 @@ export const weatherStateImage = {
   c: "/assets/svg/c.svg",
 };
 
+export type LocationUser = {
+  accuracy: number;
+  altitude: null;
+  altitudeAccuracy: null;
+  heading: null;
+  latitude: number;
+  loading: boolean;
+  longitude: number;
+  speed: null;
+  timestamp: number;
+};
+
 export type WeatherStateAbbr = keyof typeof weatherStateImage;
+
+export type TempUnits = "C" | "F";

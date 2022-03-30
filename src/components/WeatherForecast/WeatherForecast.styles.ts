@@ -1,13 +1,20 @@
-import styled from '@emotion/styled';
 import { COLORS } from '../../utils/colors';
 import mq from '../../utils/mediaQuery';
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2.6rem;
+  grid-row-gap: 3.2rem;
   margin-left: auto;
   margin-right: auto;
-  align-self: flex-start;
+  margin-bottom: 5.1rem;
+
+  ${mq['md']} {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 70.4rem;
+  }
 `;
 
 export const WeatherForecastItem = styled.div`
@@ -21,23 +28,16 @@ export const WeatherForecastItem = styled.div`
   padding-right: 2.1rem;
   padding-left: 2rem;
   box-sizing: border-box;
-  margin-bottom: 3.2rem;
+
+  > p {
+    white-space: pre;
+  }
 
   img {
     width: 5.64rem;
     margin: auto;
     margin-bottom: 3.1rem;
     margin-top: 1rem;
-  }
-
-  &:nth-of-type(odd) {
-    margin-right: 2.6rem;
-  }
-
-  ${mq['md']} {
-    &:not(:last-child) {
-      margin-right: 2.6rem;
-    }
   }
 `;
 

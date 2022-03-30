@@ -1,4 +1,3 @@
-import React, { ReactElement, HTMLProps } from 'react';
 import * as Styles from './Text.styles';
 import { TextProps } from './Text.types';
 

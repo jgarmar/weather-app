@@ -1,4 +1,3 @@
-import React, { ReactElement, HTMLProps } from 'react';
 import {
   WeatherStateAbbr,
   weatherStateImage,

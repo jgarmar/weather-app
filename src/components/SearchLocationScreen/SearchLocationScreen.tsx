@@ -1,11 +1,13 @@
-import React, { ReactElement, HTMLProps, useState } from 'react';
-import CurrentWeatherInfo from '../CurrentWeatherInfo';
-import SearchLocations from '../SearchLocations';
-import Button from '../ui-components/Button';
-import Text from '../ui-components/Text';
 import * as Styles from './SearchLocationScreen.styles';
+
+import { MdClear, MdGpsFixed } from 'react-icons/md';
+import React, { HTMLProps, ReactElement, useState } from 'react';
+
+import Button from '../ui-components/Button';
+import CurrentWeatherInfo from '../CurrentWeatherInfo';
 import { SearchLocationScreenProps } from './SearchLocationScreen.types';
-import { MdGpsFixed, MdClear } from 'react-icons/md';
+import SearchLocations from '../SearchLocations';
+import Text from '../ui-components/Text';
 import { useGeolocation } from 'react-use';
 import { useWeather } from '../../hooks/useWeather';
 

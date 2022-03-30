@@ -1,5 +1,5 @@
 import { css, Global } from '@emotion/react';
-import React, { ReactElement, HTMLProps } from 'react';
+
 import SearchLocations from '../SearchLocations';
 import SearchLocationScreen from '../SearchLocationScreen';
 import SideBar from '../SideBar';
@@ -7,7 +7,8 @@ import WeatherPanel from '../WeatherPanel';
 import WeatherProvider from '../WeatherProvider';
 import * as Styles from './WeatherApp.styles';
 import { WeatherAppProps } from './WeatherApp.types';
-
+import LogRocket from 'logrocket';
+LogRocket.init('ufbure/weatherapp');
 const WeatherApp = (props: WeatherAppProps) => {
   return (
     <WeatherProvider>

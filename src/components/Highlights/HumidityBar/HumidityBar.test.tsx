@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Highlights from './Highlights';
+import HumidityBar from './HumidityBar';
 
-describe('<Highlights />', () => {
+describe('<HumidityBar />', () => {
   it('should render correctly', () => {
-    render(<Highlights />);
+    render(<HumidityBar humidity={50} />);
   });
 });

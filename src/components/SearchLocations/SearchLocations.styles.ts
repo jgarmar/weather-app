@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { COLORS } from '../../utils/colors';
 
 export const Container = styled.div``;
 
@@ -28,6 +29,10 @@ export const List = styled.div`
   flex-direction: column;
   overflow-y: auto;
   flex: 1;
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  margin-top: 3.8rem;
+  max-height: 80vh;
 `;
 
 export const LocationItem = styled.button`
@@ -37,9 +42,28 @@ export const LocationItem = styled.button`
   border: 1px solid transparent;
   cursor: pointer;
   transition: border 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+
+  > p {
+    text-align: center;
+    margin: auto;
+  }
+
+  > svg {
+    opacity: 0;
+    width: 2.2em;
+    color: ${COLORS['SHUTTLE_GRAY']};
+    height: 2.2rem;
+    transition: opacity 0.2s ease-in-out;
+  }
 
   &:hover {
     border: 1px solid #616475;
+
+    > svg {
+      opacity: 1;
+    }
   }
 `;
 

@@ -1,3 +1,8 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes } from 'react';
 
-export type HighlightProps = HTMLAttributes<HTMLElement> & {};
+export type HighlightProps = HTMLAttributes<HTMLElement> & {
+  title: string;
+  unit: string;
+  value: number;
+  children?: React.ReactNode;
+};

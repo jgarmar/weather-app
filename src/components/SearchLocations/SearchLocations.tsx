@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { useWeather } from '../../hooks/useWeather';
 import Text from '../ui-components/Text';
-import { MdSearch } from 'react-icons/md';
+import { MdSearch, MdChevronRight } from 'react-icons/md';
 
 import * as Styles from './SearchLocations.styles';
 import {
@@ -39,6 +39,7 @@ export const SearchBox = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
+
   return (
     <Styles.SearchInputContainer>
       <Styles.SearchInput>
@@ -76,6 +77,7 @@ export const LocationItem = ({ location }: LocationItemProps) => {
   return (
     <Styles.LocationItem onClick={e => handleClick(location)}>
       <Text color="ATHENS_GRAY">{location.title}</Text>
+      <MdChevronRight />
     </Styles.LocationItem>
   );
 };
