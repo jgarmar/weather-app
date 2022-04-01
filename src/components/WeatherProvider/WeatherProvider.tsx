@@ -125,6 +125,7 @@ const WeatherProvider = ({ children }: WeatherProviderProps) => {
     tempUnit,
     parseTemp,
   };
+  console.log(value);
   return (
     <WeatherContext.Provider value={value}>{children}</WeatherContext.Provider>
   );

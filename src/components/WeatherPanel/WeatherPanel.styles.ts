@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import mq from '../../utils/mediaQuery';
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   padding-top: 4.2rem;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     margin-bottom: 2.4rem;
   }
 
-  ${mq['md']} {
+  ${mq['lg']} {
     padding-left: 5.4rem;
     padding-right: 5.4rem;
   }

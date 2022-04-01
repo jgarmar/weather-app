@@ -10,9 +10,8 @@ export const Container = styled.div`
   flex-direction: column;
   box-sizing: border-box;
 
-  ${mq['md']} {
+  ${mq['lg']} {
     height: 100vh;
-
     max-width: 45.9rem;
     padding-top: 4.2rem;
   }
@@ -33,7 +32,7 @@ export const ButtonsContainer = styled.div`
   padding-left: 1.1rem;
   padding-right: 1.2rem;
 
-  ${mq['md']} {
+  ${mq['lg']} {
     padding-top: 4.2rem;
 
     padding: 0 4.6rem;

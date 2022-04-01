@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
 import { COLORS } from '../../utils/colors';
-import mq from '../../utils/mediaQuery';
 import { Text } from '../ui-components/Text/Text.styles';
+import mq from '../../utils/mediaQuery';
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   position: relative;
@@ -19,8 +19,7 @@ export const Container = styled.div`
     margin-bottom: 4rem;
     margin-top: 7.6rem;
 
-    ${mq['md']} {
-      //margin-top: 19.1rem;
+    ${mq['lg']} {
       width: 20.2rem;
     }
   }
@@ -35,7 +34,6 @@ export const Background = styled.div`
   background-repeat: repeat-x;
   position: absolute;
   z-index: 0;
-  //margin-top: 10.3rem;
 `;
 
 export const Temperature = styled.div`

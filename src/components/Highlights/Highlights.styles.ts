@@ -15,23 +15,13 @@ export const Container = styled.div`
 
 export const Highlights = styled.div`
   margin-top: 3.2rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  > div {
-    margin-bottom: 3.2rem;
-  }
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, 32.8rem);
+  grid-column-gap: 4.8rem;
+  grid-row-gap: 3.2rem;
 
   ${mq['md']} {
-    > div {
-      max-width: 32.8rem;
-      width: 100%;
-      margin-bottom: 4.8rem;
-
-      &:nth-child(odd) {
-        margin-right: 4.8rem;
-      }
-    }
+    grid-template-columns: repeat(2, 32.8rem);
   }
 `;

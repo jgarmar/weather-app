@@ -1,5 +1,6 @@
 import { COLORS, Colors } from '../../../utils/colors';
 
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Button = styled.button<{ bgColor?: Colors }>`
@@ -9,7 +10,7 @@ export const Button = styled.button<{ bgColor?: Colors }>`
     props.bgColor ? COLORS[props.bgColor] : 'transparent'};
 `;
 
-export const CircularButton = styled(Button)`
+export const CircularButton = styled(Button)<{ active?: boolean }>`
   border: none;
   border-radius: 100%;
   width: 4rem;
@@ -22,5 +23,15 @@ export const CircularButton = styled(Button)`
     width: 2.4rem;
     height: 2.4rem;
     color: ${COLORS['ATHENS_GRAY']};
+  }
+
+  ${props => props?.active && activeButton};
+`;
+
+const activeButton = css`
+  background-color: ${COLORS.ATHENS_GRAY};
+
+  > p {
+    color: ${COLORS.HAITI};
   }
 `;

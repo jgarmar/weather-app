@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import mq from '../../utils/mediaQuery';
+import styled from '@emotion/styled';
 
 export const Container = styled.div`
   background-color: #100e1d;
@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${mq['md']} {
+  ${mq['lg']} {
     flex-direction: row;
     height: 100%;
   }

@@ -13,8 +13,12 @@ export const Container = styled.div`
   box-sizing: border-box;
   position: fixed;
   z-index: 1;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 
-  ${mq['md']} {
+  ${mq['lg']} {
+    padding-left: 4.6rem;
+    padding-right: 4.6rem;
     max-width: 45.9rem;
   }
 `;
@@ -30,14 +34,8 @@ export const SearchPlacesButton = styled(Button)`
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 1.8rem;
-  padding-left: 1.1rem;
-  padding-right: 1.2rem;
 
-  ${mq['md']} {
-    padding-top: 4.2rem;
-    padding: 0 4.6rem;
-  }
+  margin-top: 1.2rem;
 `;
 
 export const CloseButton = styled(Button)`

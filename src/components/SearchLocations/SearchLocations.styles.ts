@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { COLORS } from '../../utils/colors';
+import styled from '@emotion/styled';
 
 export const Container = styled.div``;
 
@@ -14,14 +14,13 @@ export const Input = styled.input`
 `;
 
 export const SearchButton = styled.button`
-  color: #e7e7eb;
   background-color: #3c47e9;
   padding-left: 1.9rem;
   padding-top: 1.4rem;
   padding-right: 1.4rem;
   padding-bottom: 1.5rem;
   border: none;
-  font-weight: 600;
+  cursor: pointer;
 `;
 
 export const List = styled.div`
@@ -29,8 +28,6 @@ export const List = styled.div`
   flex-direction: column;
   overflow-y: auto;
   flex: 1;
-  margin-left: 1.2rem;
-  margin-right: 1.2rem;
   margin-top: 3.8rem;
   max-height: 80vh;
 `;
@@ -80,6 +77,7 @@ export const SearchInput = styled.div`
   align-items: center;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  flex: 1;
 
   > svg {
     width: 2.4rem;

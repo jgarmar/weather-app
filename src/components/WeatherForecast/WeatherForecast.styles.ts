@@ -4,15 +4,19 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 2.6rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, 12rem);
   grid-row-gap: 3.2rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5.1rem;
+  justify-content: space-between;
 
   ${mq['md']} {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2.6rem;
+  }
+
+  ${mq['lg']} {
     max-width: 70.4rem;
   }
 `;
@@ -45,7 +49,7 @@ export const TempsContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  > p:first-child {
+  > p:first-of-type {
     margin-right: 1.6rem;
   }
 `;

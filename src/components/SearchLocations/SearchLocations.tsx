@@ -1,21 +1,22 @@
-import React, {
-  ReactElement,
-  HTMLProps,
-  useState,
-  ChangeEvent,
-  useContext,
-} from 'react';
-import { useWeather } from '../../hooks/useWeather';
-import Text from '../ui-components/Text';
-import { MdSearch, MdChevronRight } from 'react-icons/md';
-
 import * as Styles from './SearchLocations.styles';
+
 import {
-  SearchLocationsProps,
-  LocationListProps,
   LocationItemProps,
+  LocationListProps,
+  SearchLocationsProps,
 } from './SearchLocations.types';
+import { MdChevronRight, MdSearch } from 'react-icons/md';
+import React, {
+  ChangeEvent,
+  HTMLProps,
+  ReactElement,
+  useContext,
+  useState,
+} from 'react';
+
 import { Location } from '../WeatherProvider/WeatherProvider.types';
+import Text from '../ui-components/Text';
+import { useWeather } from '../../hooks/useWeather';
 
 const SearchLocations = (props: SearchLocationsProps) => {
   const { locations } = useWeather();
@@ -51,7 +52,7 @@ export const SearchBox = () => {
         />
       </Styles.SearchInput>
       <Styles.SearchButton onClick={handleSearchSubmit}>
-        <Text>Search</Text>
+        <Text color="ATHENS_GRAY">Search</Text>
       </Styles.SearchButton>
     </Styles.SearchInputContainer>
   );

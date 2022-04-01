@@ -18,7 +18,7 @@ const WeatherPanel = (props: WeatherPanelProps) => (
           xxs
           underline
           as="a"
-          href="https://github.com/jgarmar"
+          href="https://devchallenges.io/portfolio/jgarmar"
           color="SANTAS_GRAY"
         >
           jgarmar
