@@ -9,13 +9,15 @@ const TempUnitSwitch = () => {
   return (
     <Styles.Container>
       <CircularButton
-        active={tempUnit === 'C'}
+        disabled={tempUnit === 'C'}
+        aria-label="Switch to Celsius"
         onClick={() => setTempUnit('C')}
       >
         <Text bold>ºC</Text>
       </CircularButton>
       <CircularButton
-        active={tempUnit === 'F'}
+        disabled={tempUnit === 'F'}
+        aria-label="Switch to Fahrenheit"
         onClick={() => setTempUnit('F')}
       >
         <Text bold>ºF</Text>

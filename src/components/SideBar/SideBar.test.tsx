@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import SideBar from './SideBar';
+import { render } from '@testing-library/react';
 
-describe('<SideBar />',()=>{
-    it('should render correctly',()=>{
-        render(
-            <SideBar />);
-    })
-})
+describe('<SideBar />', () => {
+  it('should render correctly', () => {
+    const parseTemp = jest.fn();
+
+    render(<SideBar />);
+  });
+});
