@@ -284,5 +284,13 @@ jest.mock('./hooks/useWeather', () => ({
     setShowLocationSearch: jest.fn(),
     setCurrentDefaultLocation: jest.fn(),
     setTempUnit: jest.fn(),
+    parseTemp: jest.fn(),
   }),
 }));
+
+const mockGeolocation = {
+  getCurrentPosition: jest.fn(),
+  watchPosition: jest.fn(),
+};
+
+global.navigator.geolocation = mockGeolocation;

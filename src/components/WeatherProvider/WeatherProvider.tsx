@@ -1,7 +1,6 @@
 import {
   ConsolidatedWeather,
   Location,
-  LocationUser,
   TempUnits,
   WeatherContextProps,
   WeatherInfo,
@@ -11,7 +10,6 @@ import {
 import { createContext, useCallback, useEffect, useState } from "react";
 
 import fetcher from "../../fetcher";
-import { useGeolocation } from "react-use";
 
 export const WeatherContext = createContext<any>(null);
 const DEFAULT_LOCATION = {
@@ -22,7 +20,8 @@ const DEFAULT_LOCATION = {
 };
 
 const WeatherProvider = ({ children }: WeatherProviderProps) => {
-  const locationUser = useGeolocation();
+  const [locationUser, setLocationUser] = useState<GeolocationCoordinates>();
+
   const [defaultLocation, setDefaultLocation] = useState<Location | null>(
     DEFAULT_LOCATION
   );
@@ -71,6 +70,12 @@ const WeatherProvider = ({ children }: WeatherProviderProps) => {
   }, []);
 
   useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLocationUser(position.coords);
+    });
+  }, []);
+
+  useEffect(() => {
     if (currentLocation?.woeid) {
       getWeather(currentLocation?.woeid);
       setShowLocationSearch(false);
@@ -78,19 +83,17 @@ const WeatherProvider = ({ children }: WeatherProviderProps) => {
   }, [currentLocation, getWeather]);
 
   useEffect(() => {
-    if (locationUser.error) {
+    /*if (locationUser?.error) {
       setCurrentLocation(DEFAULT_LOCATION);
-    }
-    if (locationUser?.latitude || !locationUser?.loading) {
-      geoLocalize(locationUser.latitude, locationUser.longitude);
+    }*/
+    if (locationUser?.latitude) {
+      geoLocalize(locationUser?.latitude, locationUser?.longitude);
     }
   }, [
     geoLocalize,
-    locationUser.altitude,
-    locationUser.error,
-    locationUser.latitude,
-    locationUser?.loading,
-    locationUser.longitude,
+    locationUser?.altitude,
+    locationUser?.latitude,
+    locationUser?.longitude,
   ]);
 
   if (!currentLocation) {
@@ -125,7 +128,7 @@ const WeatherProvider = ({ children }: WeatherProviderProps) => {
     tempUnit,
     parseTemp,
   };
-  console.log(value);
+
   return (
     <WeatherContext.Provider value={value}>{children}</WeatherContext.Provider>
   );

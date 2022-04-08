@@ -10,7 +10,7 @@ export const Button = styled.button<{ bgColor?: Colors }>`
     props.bgColor ? COLORS[props.bgColor] : 'transparent'};
 `;
 
-export const CircularButton = styled(Button)<{ active?: boolean }>`
+export const CircularButton = styled(Button)<{ disabled?: boolean }>`
   border: none;
   border-radius: 100%;
   width: 4rem;
@@ -25,7 +25,7 @@ export const CircularButton = styled(Button)<{ active?: boolean }>`
     color: ${COLORS['ATHENS_GRAY']};
   }
 
-  ${props => props?.active && activeButton};
+  ${props => props?.disabled && activeButton};
 `;
 
 const activeButton = css`

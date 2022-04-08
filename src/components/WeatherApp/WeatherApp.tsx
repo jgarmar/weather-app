@@ -4,11 +4,10 @@ import { Global, css } from '@emotion/react';
 
 import SearchLocationScreen from '../SearchLocationScreen';
 import SideBar from '../SideBar';
-import { WeatherAppProps } from './WeatherApp.types';
 import WeatherPanel from '../WeatherPanel';
 import WeatherProvider from '../WeatherProvider';
 
-const WeatherApp = (props: WeatherAppProps) => {
+const WeatherApp = () => {
   return (
     <WeatherProvider>
       <Global
