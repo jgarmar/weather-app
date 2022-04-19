@@ -25,11 +25,13 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.7.2",
+    "gh-pages": "^3.2.3",
     "plop": "^3.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf docs && mv build docs",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-component": "plop"
